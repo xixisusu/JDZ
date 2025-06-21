@@ -108,7 +108,15 @@
         }
 
         a, a:visited, a:hover, a:active {
-        text-decoration: none;
+            text-decoration: none;
+        }
+
+        a[href^="tel"],
+        a[href^="mailto"],
+        a[href^="geo"] {
+            text-decoration: none;
+            color: inherit;
+            -webkit-text-decoration: none;
         }
 
 
