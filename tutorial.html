@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單做</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="footer_tutorial.css">
+</head>
+
+
+<body>
+<!-- ------header------ -->
+<header>
+    <input type="checkbox" id="menu-toggle" hidden onclick="event.stopPropagation()">
+    <label for="menu-toggle" class="menu-icon">
+        <img src="./icon/hamburger.png" alt="menu">
+    </label> 
+    <nav onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closeMenu()">
+            <img src="./icon/Path.png" alt="close menu">
+        </button>
+        <ul class="menu" onclick="event.stopPropagation()">
+        <li><a href="index.html#area3">最新消息</a></li>
+        <li><a href="./tutorial.html">主題課程</a></li>
+        <li><a href="#">購買專區</a></li>
+        <!-- <li><a href="#">社群交流</a></li> -->
+    </ul>
+    </nav>
+
+<div class="logo">
+        <a href="./index.html">
+            <img src="./picture/logo.png" alt="logo">
+        </a>
+    </div>
+
+    <div class="main-header">
+        <button class="header-button">
+            <a href="#">
+                <img src="./icon/user.png" alt="user">
+            </a>
+        </button>
+        <button class="header-button">
+            <a href="#">
+                <img src="./icon/shopping bag 01.png" alt="cart">
+            </a>
+        </button>
+    </div>
+</header>
+
+<!-- ------回頁頂按鈕------ -->
+<button class="backtotop" id="backToTop">
+    <img src="./icon/back to top icon.png" alt="back to top">
+</button>
+
+
+<div class="container">
+    <!-- ------麵包屑----- -->
+    <nav class="breadcrumb">
+        <ul>
+            <li><a href="./index.html">首頁</a></li>
+            <li><a href="./tutorial.html">主題課程</a></li>
+            <li class="current">教學類別</li>
+        </ul>
+    </nav>
+
+    <div class="extra-group">
+        <!-- 教學類別 -->
+    <div class="t-category">
+        <div class="tcbg">
+            <img src="./icon/category background.png" alt="">
+        </div>
+        <div class="tc-button-grid" onclick="toggle()">
+            <div class="tcbtn-img1"></div>
+            <a href="./tutorial_2.html#extra"><div class="tcbtn-img2"></div></a>
+            <div class="tcbtn-img3"></div>
+            <div class="tcbtn-img4"></div>
+            <div class="tcbtn-img5"></div>
+            <div class="tcbtn-img6"></div>
+        </div>
+    </div>
+
+    <!-- 課程卡片 -->
+    <div id="extra" style="display: none;" class="t-card">
+        <div class="t-cardbg">
+            <img src="./icon/tutorial card background.png" alt="">
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- ------footer------ -->
+<div class="footer-top">
+    <footer id="page-footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <div class="footer-item">
+            <img src="./icon/location.png" alt="location">
+            <span>320 桃園市中壢區復興路46號9樓</span>
+            </div>
+            <div class="footer-item">
+            <img src="./icon/phone.png" alt="phone">
+            <span>03 - 425 - 1108</span>
+            </div>
+        </div>
+
+        <div class="logo">
+            <a href="./index.html">
+            <img src="./picture/logo.png" alt="logo">
+            </a>
+        </div>
+        
+        <div class="footer-social">
+    <div class="footer-icon-row">
+        <button class="footer-icons">
+            <a href="#"><img src="./icon/facebook.png" alt="facebook"></a>
+        </button>
+        <button class="footer-icons">
+            <a href="#"><img src="./icon/twitter.png" alt="twitter"></a>
+        </button>
+        <button class="footer-icons">
+            <a href="#"><img src="./icon/instagram.png" alt="instagram"></a>
+        </button>
+    </div>
+    <p>© Copyright 2025. JDZ</p>
+</div>
+
+    </div>
+</footer>
+</div>
+</body>
+
+
+<script>
+//menu開關
+function closeMenu() {
+    document.getElementById('menu-toggle').checked = false;
+    }
+//backtotop
+const backtotop = document.getElementById("backToTop");
+window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    backtotop.style.display = "block";
+    } else {
+    backtotop.style.display = "none";
+    }
+};
+backtotop.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+//slide前後控制
+const slider = document.getElementById('slider');
+    const slides = slider.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        if (index < 0) {
+        currentIndex = slides.length - 1;
+        } else if (index >= slides.length) {
+        currentIndex = 0;
+        } else {
+        currentIndex = index;
+        }
+   const offset = -currentIndex * 521; // 圖片寬度
+        slider.style.transform = `translateX(${offset}px)`;
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+//footer位置變動
+// function toggle() {
+//     const extra = document.getElementById('extra');
+//     const footer = document.getElementById('footer');
+
+//     // 切換 display
+//     if (extra.style.display === 'none') {
+//         extra.style.display = 'block';
+//     } else {
+//         extra.style.display = 'none';
+//     }
+
+//     // 更新 footer top 值
+//     setTimeout(() => {
+//         const bodyHeight = document.body.scrollHeight;
+//         footer.style.top = bodyHeight + 'px';
+//     }, 10); // 等待 DOM 更新
+//     }
+
+//   // 初始定位 footer
+//     window.onload = () => {
+//     const footer = document.getElementById('footer');
+//     footer.style.top = document.body.scrollHeight + 'px';
+//     };
+
+//footer懸浮
+// window.addEventListener('scroll', () => {
+//     const footer = document.getElementById('page-footer');
+//     const scrollBottom = window.innerHeight + window.scrollY;
+//     const docHeight = document.documentElement.scrollHeight;
+
+//     if (scrollBottom >= docHeight) {
+//         footer.classList.add('visible');
+//     } else {
+//         footer.classList.remove('visible');
+//     }
+// });
+</script>
+
+
+</body>
+</html>

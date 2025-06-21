@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單做</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./new.css">
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html">
+                <div class="logo">
+                    <img src="./picture/logo.png" alt="">
+                </div>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link">最新消息</a></li>
+                <li><a href="#" class="nav-link">主題課程</a></li>
+                <li><a href="#" class="nav-link">購買專區</a></li>
+            </ul>
+            
+            <div class="user-section">
+                <a href="">
+                    <div class="user-icon">
+                        <img src="./icon/user.png" alt="">
+                    </div>
+                </a>
+                <a href="">
+                    <div class="user-icon">
+                        <img src="./icon/shopping_bag01.png" alt="">
+                    </div>
+                </a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------回頁頂按鈕------ -->
+    <button class="backtotop" id="backToTop">
+        <img src="./picture/back_to_top.png" alt="back to top">
+    </button>
+
+    <!-- slide -->
+    <div class="slide-container">
+        <div class="slider">
+            <div class="slide-content">
+                <h2>本期熱門<br>毛線編織的魔法世界</h2>
+                <p>走進毛線編織的魔法世界，新手也能輕鬆上手 !</p>
+            </div>
+            <div class="slide-active">
+                <div class="slide"><img src="./picture/slide01.jpg" alt=""></div>
+                <div class="slide"><img src="./picture/slide02.jpg" alt=""></div>
+                <div class="slide"><img src="./picture/slide03.jpg" alt=""></div>
+                <div class="slide"><img src="./picture/slide04.jpg" alt=""></div>
+            </div>
+            <!-- 導航箭頭 -->
+            <div class="slide-btn">
+                <button class="nav-arrow prev" onclick="changeSlide(-1)">
+                    <img src="./icon/slide_prev.png" alt="">
+                </button>
+                <button class="nav-arrow next" onclick="changeSlide(1)">
+                    <img src="./icon/slide_next.png" alt="">
+                </button>
+            </div>
+
+            <!-- 導航點 -->
+            <div class="dots-container">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- area1-video -->
+        <div class="area1">
+            <div class="index-video">
+                <div class="titletag1">
+                    <img class="title-icon" src="./icon/magic.png" alt="">
+                    <h3>魔法教學</h3>
+                </div>
+                <video controls src="./video/knitting.mp4"></video>
+            </div>
+        </div>
+
+    <!-- area2 -->
+    <div class="area2">
+        <div class="area2-container">
+            <h3>毛線編織<br>材料工具販售中</h3>
+            <a href="">
+                <button class="more-btn">
+                    <p>查看更多</p>
+                    <img class="btn-icon1" src="./icon/arrow_bold.png" alt="">
+                </button>
+            </a>
+            <div class="yarn-group">
+                <div class="yarn1">
+                        <img class="yarn1p" src="./picture/index_yarn01.png" alt="">
+                        <div class="yarntag">
+                            <div class="tag-bg"></div>
+                            <p>PRATFOUN<br>四股棉線</p>
+                        </div>
+                    </div>
+                    <div class="yarn2">
+                        <img class="yarn2p" src="./picture/index_yarn02.png" alt="">
+                        <div class="yarntag">
+                            <div class="tag-bg"></div>
+                            <p>MARES HARN<br>圓股線</p>
+                        </div>
+                    </div>
+                    <div class="yarn3">
+                        <img class="yarn3p" src="./picture/index_yarn03.png" alt="">
+                        <div class="yarntag">
+                            <div class="tag-bg"></div>
+                            <p>DREAM YARN<br>有機棉</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- area3 -->
+    <div class="area3" id="area3">
+        <div class="news-list">
+            <div class="titletag1">
+                    <img class="title-icon" src="./icon/news.png" alt="">
+                    <h3>最新消息</h3>
+            </div>
+            <div class="news-item">
+                <div class="img-wrapper">
+                    <img src="./picture/index_news01.jpg" alt="">
+                </div>
+                <div class="news-text">
+                    <h3>療癒系黏土捏塑技巧！</h3>
+                    <p>輕鬆享受捏塑的療癒過程，為生活增添一份手作的溫度與創意。</p>
+                </div>
+                <div class="arrow-button">
+                    <img src="./icon/arrow.png" alt="">
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="img-wrapper">
+                    <img src="./picture/index_news02.jpg" alt="">
+                </div>
+                <div class="news-text">
+                    <h3>拼布新手必學的配色概念！</h3>
+                    <p>從基礎的配色原理到實用的生活小物製作，分享簡單的裁縫技巧與布料搭配靈感。</p>
+                </div>
+                <div class="arrow-button">
+                    <img src="./icon/arrow.png" alt="">
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="img-wrapper">
+                    <img src="./picture/index_news03.jpg" alt="">
+                </div>
+                <div class="news-text">
+                    <h3>串珠設計入門與風格打造指南！</h3>
+                    <p>將介紹串珠所需的基礎工具與材料，並分享簡單的串珠技巧與設計概念。</p>
+                </div>
+                <div class="arrow-button">
+                    <img src="./icon/arrow.png" alt="">
+                </div>
+            </div>
+            <a href="">
+                <button class="more-btn">
+                    <p>查看更多</p>
+                    <img class="btn-icon1" src="./icon/arrow_bold.png" alt="">
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-top">
+        <footer id="page-footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <div class="footer-item">
+                        <img src="./icon/location.png" alt="location">
+                        <span>320 桃園市中壢區復興路46號9樓</span>
+                    </div>
+                    <div class="footer-item">
+                        <img src="./icon/phone.png" alt="phone">
+                        <span>03 - 425 - 1108</span>
+                    </div>
+                </div>
+                
+                <div class="footer-logo">
+                    <a href="./index.html">
+                    <img src="./picture/logo.png" alt="logo">
+                    </a>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="footer-icon-row">
+                        <button class="footer-icons">
+                            <a href="#"><img src="./icon/facebook.png" alt="facebook"></a>
+                        </button>
+                        <button class="footer-icons">
+                            <a href="#"><img src="./icon/twitter.png" alt="twitter"></a>
+                        </button>
+                        <button class="footer-icons">
+                            <a href="#"><img src="./icon/instagram.png" alt="instagram"></a>
+                        </button>
+                    </div>
+                    <p>© Copyright 2025. JDZ</p>
+                </div>
+            </div>
+    </footer>
+</div>
+
+
+    <script>
+        // 漢堡開關
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 點分頁關閉
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 點區域關閉
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target) || hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // 視窗改變
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        //backtotop
+        const backtotop = document.getElementById("backToTop");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backtotop.style.display = "block";
+            } else {
+            backtotop.style.display = "none";
+            }
+        };
+        backtotop.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        //slide
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+        const slideInterval = 3000; // 5秒切換一次
+
+        // 顯示指定的幻燈片
+        function showSlide(index) {
+            // 移除所有active類
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // 添加active類到當前幻燈片
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        // 下一張幻燈片
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        // 上一張幻燈片
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        // 切換幻燈片（通過箭頭）
+        function changeSlide(direction) {
+            clearInterval(autoSlideInterval);
+            
+            if (direction === 1) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+            
+            // 重新開始自動播放
+            startAutoSlide();
+        }
+
+        // 跳轉到指定幻燈片（通過點擊點）
+        function currentSlide(index) {
+            clearInterval(autoSlideInterval);
+            
+            currentSlideIndex = index - 1;
+            showSlide(currentSlideIndex);
+            
+            // 重新開始自動播放
+            startAutoSlide();
+        }
+
+        // 開始自動播放
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, slideInterval);
+        }
+
+        // 停止自動播放
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            startAutoSlide();
+            
+            // 當滑鼠懸停時暫停自動播放
+            const sliderContainer = document.querySelector('.slider-container');
+            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+            sliderContainer.addEventListener('mouseleave', startAutoSlide);
+        });
+
+        // 鍵盤控制
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+        // 觸控支援（手機滑動）
+        let startX = 0;
+        let endX = 0;
+
+        document.querySelector('.slider').addEventListener('touchstart', e => {
+            startX = e.changedTouches[0].screenX;
+        });
+
+        document.querySelector('.slider').addEventListener('touchend', e => {
+            endX = e.changedTouches[0].screenX;
+            const threshold = 50; // 最小滑動距離
+
+            if (startX - endX > threshold) {
+                changeSlide(1); // 向左滑動，下一張
+            } else if (endX - startX > threshold) {
+                changeSlide(-1); // 向右滑動，上一張
+            }
+        });
+
+        // yarntag:hover
+        const tags = document.querySelectorAll('.yarntag');
+
+        tags.forEach(tag => {
+            // 進
+            tag.addEventListener('mouseenter', () => {
+            const parent = tag.parentElement; // yarn1 / yarn2 / yarn3
+            const img = parent.querySelector('img')
+            img.style.transition = 'transform 0.3s ease';
+            img.style.transform = 'translateY(-20px)';
+            });
+
+            // 出
+            tag.addEventListener('mouseleave', () => {
+            const parent = tag.parentElement;
+            const img = parent.querySelector('img');
+            img.style.transform = 'translateY(0)';
+            });
+        });
+
+    </script>
+</body>
+</html>

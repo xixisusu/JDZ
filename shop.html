@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單做</title>
+    <link rel="stylesheet" href="./new.css">
+</head>
+<body>
+    <!-- header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./new_index.html">
+                <div class="logo">
+                    <img src="./picture/logo.png" alt="">
+                </div>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link">最新消息</a></li>
+                <li><a href="#" class="nav-link">主題課程</a></li>
+                <li><a href="#" class="nav-link">購買專區</a></li>
+            </ul>
+            
+            <div class="user-section">
+                <a href="">
+                    <div class="user-icon">
+                        <img src="./icon/user.png" alt="">
+                    </div>
+                </a>
+                <a href="">
+                    <div class="user-icon">
+                        <img src="./icon/shopping bag 01.png" alt="">
+                    </div>
+                </a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------回頁頂按鈕------ -->
+    <button class="backtotop" id="backToTop">
+        <img src="./icon/back to top icon 03.png" alt="back to top">
+    </button>
+
+    <script>
+        // 漢堡開關
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 點分頁關閉
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 點區域關閉
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target) || hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // 視窗改變
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        //backtotop
+        const backtotop = document.getElementById("backToTop");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backtotop.style.display = "block";
+            } else {
+            backtotop.style.display = "none";
+            }
+        };
+        backtotop.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>
